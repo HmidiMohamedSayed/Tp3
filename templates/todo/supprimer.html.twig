@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>add</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootswatch@4.5.2/dist/cerulean/bootstrap.min.css">
+</head>
+<body>
+{% for cle,valeur in app.session.flashBag.get('error') %}
+<div class="alert alert-info " style="background-color: indianred">
+{{ valeur }}
+</div>
+{% endfor %}
+
+{% for cle,valeur in app.session.flashBag.get('sup') %}
+    <div class="alert alert-info "style="background-color: lightgreen">
+        {{ valeur }}
+    </div>
+{% endfor %}
+{% for cle,valeur in app.session.flashBag.get('supp') %}
+    <div class="alert alert-info " style="background-color: indianred">
+        {{ valeur }}
+    </div>
+{% endfor %}
+<h1><a href="http://127.0.0.1:8000/todo">Consulter la liste des TODOs</a></h1>
+</body>
+</html>

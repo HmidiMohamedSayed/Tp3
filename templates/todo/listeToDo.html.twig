@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>session</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootswatch@4.5.2/dist/cerulean/bootstrap.min.css">
+</head>
+<body>
+{% for cle,valeur in app.session.flashBag.get('bienvenu') %}
+    <div class="alert alert-info " style="background-color:lightblue ">
+        {{ valeur }}
+    </div>
+{% endfor %}
+
+{% for cle,valeur in app.session.flashBag.get('Succesreset') %}
+    <div class="alert alert-info " style="background-color:lightgreen ">
+        {{ valeur }}
+    </div>
+{% endfor %}
+{% for cle,valeur in app.session.flashBag.get('warning') %}
+    <div class="alert alert-info " style="background-color: indianred">
+        {{ valeur }}
+    </div>
+    <p>Pour l'initialiser :</p><a href="http://127.0.0.1:8000/todo"><input type="button" value="Cliquez ici"></a></i>
+{% endfor %}
+{% for cle,valeur in app.session.flashBag.get('warn') %}
+    <div class="alert alert-info " style="background-color: indianred">
+        {{ valeur }}
+    </div>
+{% endfor %}
+
+{% for cle,valeur in app.session.flashBag.get('succ') %}
+    <div class="alert alert-info " style="background-color:lightgreen ">
+        {{ valeur }}
+    </div>
+{% endfor %}
+<h1>TODO Liste :</h1><br>
+<ol>
+{% for cle,valeur in app.session.get('todo') %}
+        <li>
+            {{ cle }}
+        </li>
+        <p class="alert alert-info">{{ valeur }}</p>
+{% endfor %}
+</ol>
+<p>reset :</p><a href="http://127.0.0.1:8000/resetToDo"><input type="button" value="Cliquez ici"></a></i>
+</body>
+</html>

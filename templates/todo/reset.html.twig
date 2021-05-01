@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>reset</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootswatch@4.5.2/dist/cerulean/bootstrap.min.css">
+
+</head>
+<body>
+{% for cle,valeur in app.session.flashBag.get('reset') %}
+    <div class="alert alert-info " style="background-color:indianred ">
+        {{ valeur }}
+    </div>
+{% endfor %}
+{% if not app.session.has('todo') %}
+    <p>Pour l'initialiser :</p><a href="http://127.0.0.1:8000/todo"><input type="button" value="Cliquez ici"></a></i>
+{% endif %}
+</body>
+</html>
